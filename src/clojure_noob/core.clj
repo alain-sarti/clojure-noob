@@ -73,3 +73,23 @@
      [{:keys [lat lng]}]
   (println (str "Treasure lat: " lat))
   (println (str "Treasure lng: " lng)))
+
+(defn anonymousfn
+  []
+  (map #(str "Hi, " %1 "!") ["Darth Vader" "Mr. Magoo"])
+  )
+
+(defn inc-maker
+  [inc-by]
+  #(+ %1 inc-by)
+  )
+
+(def inc3 (inc-maker 3))
+
+(defn looping
+  []
+  (loop [iteration 0]
+    (println (str "Iteration " iteration))
+    (if (> iteration 3)
+      (println "Goodbye!")
+      (recur (inc iteration)))))
